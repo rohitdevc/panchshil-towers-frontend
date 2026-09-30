@@ -46,7 +46,7 @@ FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
-ENV PORT=2985
+ENV PORT=2984
 ENV HOSTNAME=0.0.0.0
 
 COPY --from=builder /app/public ./public
@@ -54,6 +54,6 @@ COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-EXPOSE 2985
+EXPOSE 2984
 
 CMD ["node", "server.js"]
