@@ -21,33 +21,14 @@ export default function ThankYouPage({banner}: Props) {
 
     return (
         <>
+        {/* Google Ads Conversion */}
         <Script id="google-ads-conversion" strategy="afterInteractive">
-            {`
-                function gtag_report_conversion(url) {
-                var callback = function () {
-                    if (typeof(url) != 'undefined') {
-                    window.location = url;
-                    }
-                };
-    
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-16772965059/PxgrCPz-qOgZEMPF_L0-',
-                    'value': 1.0,
-                    'currency': 'INR',
-                    'event_callback': callback
-                });
-    
-                return false;
-                }
-            `}
+            {` gtag('event', 'conversion', { 'send_to': 'AW-832162169/PZ-0CKaQ6f8BEPmS54wD' }); `}
         </Script>
-        <iframe
-            src="https://adgebra.co.in/Tracker/Conversion?p1=6370&p2=[order_Id]&p3=[product_Id]&p4=[cartvalue]&p5=[flag~custom_values]"
-            width="0"
-            height="0"
-            frameBorder="0"
-            style={{ display: "none" }}
-        />
+        {/* ClmbTech Pixel */}
+        <Script id={`clmbtech-pixel-8722`} strategy="afterInteractive">
+            {`!function(px){ function e(t,e,c){ var n="",r=""; try{ ""!=(n=function(t,e){ try{ var c={}; e.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(t,e,n){ c[e]=n }); return c.hasOwnProperty(t)?c[t]:"" }catch(t){ return"" } }(t,c)) ?function(t,e,c){ try{ var n,r; c ?((n=new Date).setTime(n.getTime()+864e5), r="; expires="+n.toGMTString()) :r=""; document.cookie=t+"="+e+r+";Path=/" }catch(t){} }(e,n,1) :n=function(t){ try{ var e=document.cookie.match( new RegExp("(^| )"+t+"=([^;]+)") ); if(e)return e[2] }catch(t){} return null }(e); r=""!=n&&null!=n ?" &"+t+"="+n :"&"+t+"="; }catch(t){} return r; } var c="",n="",r=""; try{ n=e("ad","acf",c=window.location.href); r=e("col_ci","col_ci",c); }catch(t){ console.log(t) } var a= "https://ade.clmbtech.com/cde/eventTracking.htm?pixelId=" +px+ "&_w=1&_t=2"+ n+ r+ "&rd="+(new Date).getTime(); (new Image).src=a; }('8722'); `}
+        </Script>
         <Header onEnquiryClick={() => updateActivePopUp(true)} />
         <main className="bg-no-repeat bg-cover bg-center h-[85vh]" style={{backgroundImage: `url(${banner.banner_image_url})`}}>
             <section className="flex flex-col gap-5 justify-center items-center text-center w-full h-full text-white px-5">

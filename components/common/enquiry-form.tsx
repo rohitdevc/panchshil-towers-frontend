@@ -198,14 +198,14 @@ export default function EnquiryFormHTML() {
                 <div className="relative w-full sm:w-1/2">
                     <input type="text" name="enquiry_first_name" placeholder="First Name" onChange={handleEnquiryFormChange} value={enquiryForm.enquiry_first_name} ref={enquiryFirstNameRef} />
                     <span className="w-full absolute left-0 top-8 h-[0.5px]"></span>
-                    <div className="text-black h-1 pt-1">
+                    <div className="text-black h-1">
                         <span className={`text-xs transition-all duration-200 ${errors.enquiry_first_name ? "opacity-100" : "opacity-0"}`}>{errors.enquiry_first_name}</span>
                     </div>
                 </div>
                 <div className="relative w-full sm:w-1/2">
                     <input type="text" name="enquiry_last_name" placeholder="Last Name" onChange={handleEnquiryFormChange} value={enquiryForm.enquiry_last_name} ref={enquiryLastNameRef} />
                     <span className="w-full absolute left-0 top-8 h-[0.5px]"></span>
-                    <div className="text-black h-1 pt-1">
+                    <div className="text-black h-1">
                         <span className={`text-xs transition-all duration-200 ${errors.enquiry_last_name ? "opacity-100" : "opacity-0"}`}>{errors.enquiry_last_name}</span>
                     </div>
                 </div>
@@ -223,12 +223,12 @@ export default function EnquiryFormHTML() {
                         <IoIosArrowDown size={20} />
                     </div>
                     <span className="w-full absolute left-0 top-8 h-[0.5px]"></span>
-                    <div className="text-black h-1 pt-1"></div>
+                    <div className="text-black h-1"></div>
                 </div>
                 <div className="relative w-full sm:w-1/2">
                     <input type="tel" name="enquiry_phone_number" placeholder="Mobile" inputMode="numeric" onChange={handleEnquiryFormChange} value={enquiryForm.enquiry_phone_number} ref={enquiryPhoneNumberRef} />
                     <span className="w-full absolute left-0 top-8 h-[0.5px]"></span>
-                    <div className="text-black h-1 pt-1">
+                    <div className="text-black h-1">
                         <span className={`text-xs transition-all duration-200 ${errors.enquiry_phone_number ? "opacity-100" : "opacity-0"}`}>{errors.enquiry_phone_number}</span>
                     </div>
                 </div>
@@ -236,7 +236,7 @@ export default function EnquiryFormHTML() {
             <div className="relative w-full">
                 <input type="email" name="enquiry_email_address" placeholder="Email" onChange={handleEnquiryFormChange} value={enquiryForm.enquiry_email_address} ref={enquiryEmailAddressRef} />
                 <span className="w-full absolute left-0 top-8 h-[0.5px]"></span>
-                <div className="text-black h-1 pt-1">
+                <div className="text-black h-1">
                     <span className={`text-black text-xs transition-all duration-200 ${errors.enquiry_email_address ? "opacity-100" : "opacity-0"}`}>{errors.enquiry_email_address}</span>
                 </div>
             </div>

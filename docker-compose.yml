@@ -20,11 +20,11 @@ services:
 
     environment:
       NODE_ENV: production
-      PORT: 2986
+      PORT: 2985
       HOSTNAME: "0.0.0.0"
 
     ports:
-      - "2986:2986"
+      - "2985:2985"
 
     command: node server.js
     restart: unless-stopped

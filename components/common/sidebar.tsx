@@ -25,13 +25,13 @@ export default function Sidebar({onEnquiryClick}: Props) {
                 <Image src={`${basePath}/images/call-icon.png`} alt="Call Icon" width={50} height={50} className="h-[35px] w-[35px] transition-transform duration-300 group-hover:scale-[1.14]" />
             </Link>
         </section>
-        <section className="sm:hidden flex fixed bottom-0 z-45 bg-white uppercase w-full">
+        <section className="sm:hidden flex fixed bottom-0 z-45 bg-white uppercase w-full text-[#4B4D4C]">
             <div className="cursor-pointer border-r border-[#ff853c] flex gap-2 justify-center items-center w-1/2 py-3" onClick={onEnquiryClick}>
                 <Image src={`${basePath}/images/mobile-email-icon.png`} alt="Email Icon" width={15} height={15} />
                 <span className="text-xs">By Invitation Only</span>
             </div>
             <Link href="tel:+919758445845" className="flex gap-2 justify-center items-center w-1/2 py-3">
-                <FaPhoneVolume size={15} />                    
+                <FaPhoneVolume size={15} className="text-[#C9A338]" />                    
                 <span className="text-xs">Call Now</span>
             </Link>
         </section>

@@ -8,8 +8,6 @@ const nextConfig: NextConfig = {
 	turbopack: {
 		root: __dirname,
 	},
-
-	allowedDevOrigins: ['192.168.0.193'],
 	
 	basePath: process.env.BASEPATH_PREFIX === "/" ? "" : process.env.BASEPATH_PREFIX,
 	

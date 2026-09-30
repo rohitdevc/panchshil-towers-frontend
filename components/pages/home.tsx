@@ -167,7 +167,7 @@ export default function HomePage({
                             ))
                         }
                     </Swiper>
-                    <div className="pointer-events-none absolute bottom-0 left-0 z-1 h-[100px] w-full bg-gradient-to-t from-black/100 to-transparent" />
+                    <div className="pointer-events-none absolute bottom-0 left-0 z-1 h-[200px] w-full bg-gradient-to-t from-black/100 to-transparent" />
                     <div className="absolute bottom-10 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-15 z-10 flex items-center gap-10">
                         <button className="master-slider-prev text-white cursor-pointer" aria-label="Previous Slide">
                             <HiArrowLongLeft size={30} />
@@ -180,7 +180,7 @@ export default function HomePage({
                 </section>
                 )
             }
-            <section className="px-5 sm:px-10 md:px-15 lg:px-20 xl:px-25 sm:py-15 lg:py-20 xl:py-25 2xl:py-45 bg-no-repeat bg-cover flex flex-col gap-5" style={{backgroundImage: `url(${basePath}/images/about.jpg)`}}>
+            <section className="px-5 sm:px-10 md:px-15 lg:px-20 xl:px-25 py-10 sm:py-15 lg:py-20 xl:py-25 2xl:py-45 bg-no-repeat bg-cover flex flex-col gap-5" style={{backgroundImage: `url(${basePath}/images/about.jpg)`}}>
                 <div className="max-w-6xl mx-auto bg-[#bcbfb6] text-[#424544] p-7 sm:p-10 lg:px-25 lg:py-25 flex flex-col gap-5 font-trajan-pro-bold" id="about" ref={aboutRef}>
                     <h2 className="text-3xl">{introduction.introduction_caption}</h2>
                     <p className="text-base md:text-lg lg:text-xl font-futura-book sm:leading-relaxed font-futura-book">{parser(nl2br(introduction.introduction_description))}</p>
@@ -189,8 +189,8 @@ export default function HomePage({
                     configurations && configurations.length > 0 && (
                     <div className="flex flex-col gap-10 md:gap-20 py-15" id="configurations" ref={configurationRef}>
                         <h2 className="font-trajan-pro-bold tracking-wider uppercase mx-auto text-white text-3xl md:text-4xl xl:text-5xl">Configuration</h2>
-                        <div className="w-full mx-auto flex md:flex-col configurations">
-                            <ul className="border sm:border-0 sm:border-t sm:border-l sm:border-r border-white uppercase text-base sm:text-lg">
+                        <div className="w-full mx-auto flex md:flex-col configurations font-trajan-pro-bold overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent py-2">
+                            <ul className="border sm:border-0 sm:border-t sm:border-l sm:border-r border-white uppercase text-base sm:text-lg xl:text-xl">
                                 <li className="sm:border-r border-b">Type</li>
                                 <li className="sm:border-r border-b">Carpet Area</li>
                                 <li className="sm:border-r border-b">Floor Plan</li>
@@ -236,7 +236,7 @@ export default function HomePage({
                                             className="cursor-pointer relative"
                                             key={key}>
                                                 <Image src={amenity_gallery.amenity_image_url} alt={amenity_gallery.amenity_caption} width={900} height={500} className="object-cover w-full h-full" />
-                                                <h3 className="absolute left-0 bottom-20 uppercase font-futura text-xl px-20 py-4 text-white bg-gradient-to-r from-[#454442]/[0.874387] from-[29%] to-[#454442]/0 to-[100%]">{amenity_gallery.amenity_caption}</h3>
+                                                <h3 className="absolute left-0 bottom-10 md:bottom-20 uppercase font-futura text-sm md:text-xl px-5 md:px-20 w-sm md:w-xl py-4 text-white bg-gradient-to-r from-[#454442]/[0.874387] from-[29%] to-[#454442]/0 to-[100%]">{amenity_gallery.amenity_caption}</h3>
                                             </SwiperSlide>
                                         ))
                                     }
@@ -264,8 +264,8 @@ export default function HomePage({
                 </div>
             {
                 amenities && amenities.length > 0 && (
-                    <div className="flex flex-col gap-10 items-center text-[#424544] py-5" ref={amenitiesRef}>
-                        <div className="flex flex-col justify-center items-center gap-10">
+                    <div className="flex flex-col gap-5 md:gap-10 items-center text-[#424544] py-5" ref={amenitiesRef}>
+                        <div className="flex flex-col justify-center items-center gap-5 md:gap-10">
                             <h2 className="font-trajan-pro-bold tracking-wider uppercase mx-auto text-3xl md:text-4xl xl:text-5xl">Amenities</h2>
                             <p className="text-lg sm:text-xl font-futura-book">Indulge in a spectrum of unparalleled leisure</p>
                         </div>
@@ -285,9 +285,9 @@ export default function HomePage({
                 )
             }
             </section>
-            <section className="py-15 2xl:py-30 bg-[#0A0A12]">
+            <section className="py-15 2xl:py-30 bg-[#0A0A12] bg-cover bg-no-repeat" style={{backgroundImage: `url(${basePath}/images/gallery.jpg)`}}>
                 <div className="flex flex-col justify-center gap-15 text-white" id="gallery" ref={galleryRef}>
-                    <h2 className="font-trajan-pro-bold tracking-wider uppercase mx-auto text-3xl md:text-4xl">Gallery</h2>
+                    <h2 className="font-trajan-pro-bold tracking-wider uppercase mx-auto text-3xl md:text-4xl xl:text-5xl">Gallery</h2>
                     {
                         gallery && gallery.length > 0 && (
                             <div className="relative gallery h-75 sm:h-115 xl:h-150 2xl:h-[700px]">
@@ -318,8 +318,9 @@ export default function HomePage({
                                                     setGalleryLBOpen(true);
                                                 }
                                             }}
-                                            className='cursor-pointer'>
+                                            className='cursor-pointer relative'>
                                                 <Image src={gallery_row.gallery_image_url} alt={gallery_row.gallery_caption} width={900} height={500} className="object-cover w-full h-full" />
+                                                <h3 className="absolute left-0 bottom-10 md:bottom-20 uppercase font-futura text-sm md:text-xl px-5 md:px-20 w-sm md:w-xl py-4 text-white bg-gradient-to-r from-[#454442]/[0.874387] from-[29%] to-[#454442]/0 to-[100%]">{gallery_row.gallery_caption}</h3>
                                             </SwiperSlide>
                                         ))
                                     }
@@ -348,13 +349,13 @@ export default function HomePage({
                 <div className="py-15 text-white flex flex-col gap-15 items-center px-5 sm:px-10 md:px-15 lg:px-20 xl:px-25">
                     {
                         aboutPanchshilTowers && (
-                        <div className="flex flex-col gap-7" ref={aboutPanchshilTowersRef}>
-                            <h2 className="uppercase text-3xl md:text-4xl font-trajan-pro-bold tracking-wide">{aboutPanchshilTowers.introduction_title}</h2>
+                        <div className="flex flex-col gap-7 text-center px-5 md:px-15" ref={aboutPanchshilTowersRef}>
+                            <h2 className="uppercase text-3xl md:text-4xl leading-normal font-trajan-pro-bold tracking-[3px]">{aboutPanchshilTowers.introduction_title}</h2>
                             <p className="text-xl font-futura-book">{parser(nl2br(aboutPanchshilTowers.introduction_description))}</p>
                         </div>
                     )
                     }
-                    <iframe src={aboutPanchshilTowers.introduction_google_maps_embed_url} allowFullScreen className="border-0 h-75 md:h-130 w-full"></iframe>
+                    <iframe src={aboutPanchshilTowers.introduction_google_maps_embed_url} allowFullScreen className="border-0 h-75 md:h-130 w-full grayscale"></iframe>
                 </div>
             </section>
             <section className="bg-[#BCBFB6] text-[#424544] py-15 md:py-20 flex flex-col gap-15 items-stretch" id="connect" ref={enquiryRef}>
