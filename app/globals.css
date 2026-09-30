@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #4B4D4C;
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-futura: var(--font-futura-medium);
+  --font-futura-bold: var(--font-futura-bold);
+  --font-futura-book: var(--font-futura-book);
+  --font-trajan-pro-regular: var(--font-trajan-pro-regular);
+  --font-trajan-pro-bold: var(--font-trajan-pro-bold);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.desktop_menu {
+  @apply hidden lg:flex lg:gap-5 xl:gap-7 uppercase text-white tracking-[1px] text-base
+}
+
+header {
+  ul.desktop_menu li {
+    @apply cursor-pointer px-2 transition-all duration-200 pt-10
+  }
+  ul.mobile_menu li {
+    @apply cursor-pointer
+  }
+}
+
+.default-color {
+  color: var(--foreground)
+}
+
+.default-bg-color {
+  background-color: var(--foreground)
+}
+
+.master-slider-pagination .swiper-pagination-bullet {
+  width: auto;
+  height: auto;
+  margin: 0 !important;
+  background: transparent;
+  border-radius: 0;
+  color: white;
+  opacity: 1;
+}
+
+.master-slider-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  color: var(--foreground)
+}
+
+.amenities_gallery .swiper-pagination {
+  @apply flex items-center justify-center gap-0 sm:gap-2 absolute !bottom-5
+}
+
+.amenities_gallery .swiper-pagination-bullet {
+  @apply bg-white opacity-75 w-[13px] h-[13px]
+}
+
+.amenities_gallery .swiper-pagination-bullet-active {
+  background-color: var(--foreground);
+  width: 20px;
+  height: 20px;
+}
+
+.gallery .swiper-pagination-bullet {
+  @apply bg-[var(--foreground)] opacity-100 w-3 sm:w-7 md:w-10 lg:w-15 h-[5px] rounded-sm transition-all duration-300 ease-out
+}
+
+.gallery .swiper-pagination-bullet-active {
+  @apply w-10 sm:w-15 md:w-25 lg:w-50 ease-in
+}
+
+.configurations ul {
+  @apply flex flex-col md:flex-row w-full text-center tracking-[2px] text-white
+}
+
+.configurations ul li {
+  @apply flex items-center justify-center w-full md:w-1/4 h-20 sm:h-18
+}
+
+.enquiry_form {
+  @apply text-base flex flex-col gap-5 font-futura-book
+}
+
+.enquiry_form input, .enquiry_form select, .enquiry_form textarea {
+  @apply w-full outline-0 py-2 border-b placeholder:text-current appearance-none
 }

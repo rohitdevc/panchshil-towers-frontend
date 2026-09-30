@@ -43,61 +43,6 @@ const nextConfig: NextConfig = {
 
 	return headers;
 	},
-  
-	async redirects() {
-		return [
-			{
-				source: "/about-the-developer",
-				destination: "/",
-				permanent: true,
-			},
-			{
-				source: "/yoo",
-				destination: "/",
-				permanent: true,
-			},
-			{
-				source: "/the-soaq-spa",
-				destination: "/",
-				permanent: true,
-			},
-			{
-				source: "/tranquil-oasis",
-				destination: "/",
-				permanent: true,
-			},
-			{
-				source: "/the-residences",
-				destination: "/",
-				permanent: true,
-			},
-			{
-				source: "/show-suite",
-				destination: "/",
-				permanent: true,
-			},
-			{
-				source: "/contact-us",
-				destination: "/",
-				permanent: true,
-			},
-			{
-				source: "/media-coverage",
-				destination: "/",
-				permanent: true,
-			},
-			{
-				source: "/amenities",
-				destination: "/",
-				permanent: true,
-			},
-			{
-				source: "/spa-la-vie-loccitane",
-				destination: "/",
-				permanent: true,
-			}
-		];
-	}
 }
 
 export default nextConfig;
