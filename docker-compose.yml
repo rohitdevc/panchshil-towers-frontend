@@ -1,3 +1,5 @@
+name: panchshiltowers-frontend
+
 services:
   pt-web:
     container_name: panchshiltowers-frontend
