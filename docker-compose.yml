@@ -1,5 +1,5 @@
 services:
-  web:
+  pt-web:
     container_name: panchshiltowers-frontend
 
     build:
