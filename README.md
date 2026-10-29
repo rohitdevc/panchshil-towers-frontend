@@ -77,6 +77,7 @@ NEXT_PUBLIC_PATH=
 BASEPATH_PREFIX=
 ASSET_PREFIX=
 API_DOMAIN_NAME=
+REDIS_URL=
 ```
 
 | Variable | Purpose |
@@ -85,6 +86,7 @@ API_DOMAIN_NAME=
 | `BASEPATH_PREFIX` | Optional application base-path configuration |
 | `ASSET_PREFIX` | Optional static asset prefix |
 | `API_DOMAIN_NAME` | API domain used by the application |
+| `REDIS_URL` | Redis URL used by the application. |
 
 Use the correct values for your local, staging, or production environment. Verify the API service modules for any additional requirements.
 
